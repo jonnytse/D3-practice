@@ -24,3 +24,10 @@ svg.append('line')
     .attr('y2', 120)
     .attr('stroke', 'green')    
     .attr('stroke-width', 3);
+
+svg.append('text')
+    .attr('x', 20)
+    .attr('y', 200)
+    .attr('fill', 'grey')
+    .text('hello ninjas')
+    .style('font-family', 'arial');    
