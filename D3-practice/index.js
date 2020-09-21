@@ -42,8 +42,18 @@ const data = [
 
 const svg = d3.select('svg');
 
-const rect = svg.selectAll('rect')
-    .data(data)
+//Joins aka attach data to all rects
+const rects = svg.selectAll('rect')
+    .data(data);
+
+//Add attrs to rects already in the DOM
+rects.attr('width', (d, i, n) => d.width)
+.attr('height', d => d.height)
+.attr('fill', d => d.fill);
+
+//Appends the enter selection i.e. additional rects not yet created, to DOM
+rects.enter()
+    .append('rect')
     .attr('width', (d, i, n) => d.width)
     .attr('height', d => d.height)
     .attr('fill', d => d.fill);
